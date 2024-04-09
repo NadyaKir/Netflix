@@ -1,5 +1,5 @@
-import HomeBanner from "../../components/HomeBanner";
-import NavBar from "../../components/NavBar";
+import HomeBanner from "../components/HomeBanner";
+import NavBar from "../components/NavBar";
 
 export default function HomePage() {
   return (
