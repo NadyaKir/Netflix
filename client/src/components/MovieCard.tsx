@@ -1,11 +1,14 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { PlayIcon } from "@heroicons/react/24/solid";
+import { Movie } from "../types";
 
-const MovieCard = () => {
+const MovieCard = ({ movie }: { movie: Movie }) => {
+  const { thumbnailUrl, title, description, duration, genre } = movie;
+
   return (
     <div className="group bg-zinc-900 col-span relative h-[12vw] w-[24%]">
       <img
-        src="https://goinswriter.com/wp-content/uploads/2013/10/breaking-bad.png"
+        src={thumbnailUrl}
         alt="Movie"
         draggable={false}
         className="
@@ -42,7 +45,7 @@ const MovieCard = () => {
        "
       >
         <img
-          src="https://goinswriter.com/wp-content/uploads/2013/10/breaking-bad.png"
+          src={thumbnailUrl}
           alt="Movie"
           draggable={false}
           className="
@@ -77,18 +80,13 @@ const MovieCard = () => {
               <ChevronDownIcon className="text-white group-hover/item:text-neutral-300 w-4 lg:w-6" />
             </div>
           </div>
-          <p className="text-white font-semibold mt-4 text-2xl">Breaking Bad</p>
-          <p className="text-gray-400">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Temporibus, corrupti quasi commodi vitae architecto excepturi amet
-            praesentium dignissimos repellat. Esse facilis quam nesciunt
-            quisquam sint hic necessitatibus blanditiis nisi laudantium!
-          </p>
+          <p className="text-white font-semibold mt-4 text-2xl">{title}</p>
+          <p className="text-gray-400">{description}</p>
           <div className="flex flex-row mt-4 gap-2 items-center">
-            <p className="text-white text-[10px] lg:text-sm">2</p>
+            <p className="text-white text-[10px] lg:text-sm">{duration}</p>
           </div>
           <div className="flex flex-row items-center gap-2 mt-4 text-[8px] text-white lg:text-sm">
-            <p>Drama</p>
+            <p>{genre}</p>
           </div>
         </div>
       </div>
